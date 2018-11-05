@@ -24,6 +24,11 @@ spring:
         enabled: true
         additional-paths: /**
         exclude: test/**
+  # 配置静态资源文件路径
+#  mvc:
+#      static-path-pattern: /**
+#  resources:
+#    static-locations: ["/templates/","/resources/","/static/","/public/"]
   #thymelea模板配置
   thymeleaf:
     prefix: classpath:/templates/

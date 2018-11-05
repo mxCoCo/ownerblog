@@ -18,7 +18,7 @@ public class HelloController {
     @RequestMapping("/test")
     public String test(Model model){
         List<BlogUser> blogUserList = blogUserService.findAll();
-        model.addAttribute("size", 1);
+        model.addAttribute("size", blogUserList.size());
         return "test";
     }
     @RequestMapping("/index")
