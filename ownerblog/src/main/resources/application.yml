@@ -18,6 +18,19 @@ spring:
     filters: stat,wall,log4j
   jpa:
     show-sql: true
+  #springboot热部署devtools
+  devtools:
+      restart:
+        enabled: true
+        additional-paths: /**
+        exclude: test/**
+  #thymelea模板配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
 
 mybatis:
   mapper-locations: classpath:mapping/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
@@ -29,10 +42,3 @@ pagehelper:
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
-
-#热部署生效
-#spring.devtools.restart.enabled: true
-#设置重启的目录
-#spring.devtools.restart.additional-paths: src/main/java
-#classpath目录下的WEB-INF文件夹内容修改不重启
-#spring.devtools.restart.exclude: WEB-INF/**
